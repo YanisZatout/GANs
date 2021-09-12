@@ -78,7 +78,7 @@ for epoch in bar:
         # discriminator loss real -> log(D(x))
         # with BCE : discriminator loss real =
         disc_loss_real = loss(disc_out_real, torch.ones_like(disc_out_real))
-        disc_loss_fake = loss(disc_out_fake, torch.ones_like(disc_out_fake))
+        disc_loss_fake = loss(disc_out_fake, torch.zeros_like(disc_out_fake))
 
         disc_loss = disc_loss_real + disc_loss_fake
 
